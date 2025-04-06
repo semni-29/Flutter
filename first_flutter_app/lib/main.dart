@@ -15,28 +15,75 @@ class MyApp extends StatelessWidget {
   //MyApp클래스에서는 @override 애너테이션을 이용해 build() 함수를 재정의 함.
   @override
   Widget build(BuildContext context) { //build() : 어떠한 위젯을 만들 것인지 정의함.
-    return MaterialApp(  //MeterialApp=그림을 그리는 도화지라고 생각하면 됨.
-                         //MetrerialApp() 함수에는 그림을 그리는 도구에 속하는 title, theme, home 등이 정의되어 있음.
-      title: 'Flutter Demo', //title : 앱 이름 지정
-      theme: ThemeData( //theme : 지금 만들 앱의 테마를 어떤 색상으로 할 지 정함.
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-      ), //테마 컬러 설정
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return MaterialApp(
+      //MeterialApp=그림을 그리는 도화지라고 생각하면 됨.
+      //MetrerialApp() 함수에는 그림을 그리는 도구에 속하는 title, theme, home 등이 정의되어 있음.
+        title: 'Flutter Demo', //title : 앱 이름 지정
+        theme: ThemeData( //theme : 지금 만들 앱의 테마를 어떤 색상으로 할 지 정함.
+          // This is the theme of your application.
+          //
+          // TRY THIS: Try running your application with "flutter run". You'll see
+          // the application has a purple toolbar. Then, without quitting the app,
+          // try changing the seedColor in the colorScheme below to Colors.green
+          // and then invoke "hot reload" (save your changes or press the "hot
+          // reload" button in a Flutter-supported IDE, or press "r" if you used
+          // the command line to start the app).
+          //
+          // Notice that the counter didn't reset back to zero; the application
+          // state is not lost during the reload. To reset the state, use hot
+          // restart instead.
+          //
+          // This works for code too, not just values: Most code changes can be
+          // tested with just a hot reload.
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+        ), //테마 컬러 설정
+        //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+        /*
+      //(1) Text() : 화면에 텍스트를 출력하는 플러터의 기본 위젯 : 기본 구성을 호출하지 않고 home에 Text()함수를 바로 넣으면 검은색 화면(플러터의 기본 배경색)에 빨간색 글씨+노란색 밑줄로 출력됨
+      home: Text('hello\nFlutter'),
+      */
+
+        /*
+      //(2) Text 가운데 정렬(TextAlign.center)
+        home: Text('hello\nFlutter', textAlign: TextAlign.center),
+      */
+
+        /*
+      //(3) Text를 화면 정가운데 정렬
+      home: Center(
+        child: Text('hello\nFlutter', textAlign: TextAlign.center),
+        //child : 자신 아래에 하나의 어떤 위젯을 넣겠다는 의미.
+        //children : 여러 위젯을 넣고 싶을 때 사용하는 옵션
+      )
+      */
+
+        /*
+      //(4) 배경색상 변경 (Container : 특정 공간을 책임지는 역할을 하는 위젯. 가장 많이 사용됨)
+      home: Container(
+        color: Colors.white,
+        child: Center(
+          child: Text('hello\nFlutter', textAlign: TextAlign.center),
+        )
+      )
+      */
+
+        //(5) 글자색(Text color) 변경 (TextSytle 함수 사용)
+        home: Container(
+            color: Colors.white,
+            child: Center(
+              child: Text('hello\nFlutter',
+                textAlign: TextAlign.center,
+                style: TextStyle(color:Colors.blueAccent, fontSize: 50),),
+
+            )
+        )
+
+
+
+
+
+
     );
   }
 }
