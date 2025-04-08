@@ -119,7 +119,7 @@ class _WidgetExampleState extends State<WidgetApp> {
                   ],
                 ),
               ),
-            ),ㅊ
+            ),
             Padding(
               padding: const EdgeInsets.all(15),
               child: DropdownButton<String>(
