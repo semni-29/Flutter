@@ -2,6 +2,27 @@
 
 탭바를 이용해 각 화면이동 이동하는 플러터 앱 화면 구현
 
+
+MaterialApp
+├── appBar
+│   └── Text
+├── body
+│   └── TabBarView
+│       ├── FirstApp
+│       │   └── Scaffold
+│       │       ├── appBar
+│       │       └── body
+│       └── SecondApp
+│           └── Scaffold
+│               ├── appBar
+│               └── body
+└── bottomNavigationBar
+    └── TabBar
+
+
+
+    
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
